@@ -9,6 +9,7 @@ docker push jingjielim/multi-worker:latest
 docker push jingjielim/multi-client:$SHA
 docker push jingjielim/multi-server:$SHA
 docker push jingjielim/multi-worker:$SHA
+
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=jingjielim/multi-server:$SHA
 kubectl set image deployments/client-deployment client=jingjielim/multi-client:$SHA
